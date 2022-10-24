@@ -35,16 +35,16 @@
 
 class Cell():
     __cells: int
-    
+
     # конструктор
     def __init__(self, cells: int):
         self.__cells = cells
-    
+
     # сложение
     def __add__(self, other):
         if isinstance(other, Cell):
             return self.__cells + other.__cells
-    
+
     # вычитание с проверкой
     def __sub__(self, other):
         if isinstance(other, Cell):
@@ -52,21 +52,21 @@ class Cell():
                 return self.__cells - other.__cells
             else:
                 return print("вычитание невозможно")
-                    
+
     # умножение
     def __mul__(self, other):
         if isinstance(other, Cell):
             return self.__cells * other.__cells
-    
+
     # целочисленное деление
     def __truediv__(self, other):
         if isinstance(other, Cell):
             return self.__cells // other.__cells
-    
+
     # для распечатки
     def __str__(self):
         return str(self.__cells)
-    
+
     # метод упорядочивания по рядам
     def make_order(self, n: int):
         strings_count: int
@@ -85,6 +85,7 @@ class Cell():
                 print("*", end='')
             print()
 
+
 print("Создаем объекты клеток")
 cell1 = Cell(15)
 cell2 = Cell(12)
@@ -98,7 +99,7 @@ print(f"Клетка cell4 имеет {cell4} ячеек")
 
 print(f"Сложение клеток cell1 + cell2 = {cell1 + cell2} ячеек")
 print(f"Вычитание клеток cell1 - cell2 = {cell1 - cell2} ячеек")
-print(f"Вычитание клеток cell1 - cell3 = ", end= ' ')
+print(f"Вычитание клеток cell1 - cell3 = ", end=' ')
 cell5 = cell1-cell3
 
 print(f"Умножение клеток cell1 * cell2 = {cell1 * cell2}")
